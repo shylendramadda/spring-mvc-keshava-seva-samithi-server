@@ -1,17 +1,15 @@
 package com.rss.keshava.controller;
 
-import com.rss.keshava.config.security.SecurityUser;
 import com.rss.keshava.domain.Role;
 import com.rss.keshava.domain.Status;
 import com.rss.keshava.domain.User;
 import com.rss.keshava.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 
+@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
 @RestController
 @RequestMapping("/api/user")
 public class UserController {
@@ -37,19 +35,6 @@ public class UserController {
     @GetMapping(path = "/{uid}")
     public User get(@PathVariable String uid) {
         return userService.getByUid(uid);
-    }
-
-    @GetMapping
-    public User getByLogin() {
-        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        if (authentication != null){
-            if (authentication.getPrincipal() instanceof  String){
-                return userService.getByUserName(((String) authentication.getPrincipal()).toString());
-            } else  if (authentication.getPrincipal() instanceof SecurityUser){
-                return userService.getByUserName(((SecurityUser) authentication.getPrincipal()).getUsername());
-            }
-        }
-        return  new User();
     }
 
     @PostMapping(path = "/login")
