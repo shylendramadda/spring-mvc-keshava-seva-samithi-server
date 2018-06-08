@@ -78,7 +78,8 @@ public class UserService {
     }
 
     public User login(User user) {
-        return userRepository.findByUserNameAndPassword(user.getUserName(), user.getPassword());
+        User byUserNameAndPassword = userRepository.findByUserNameAndPassword(user.getEmail(), user.getPassword());
+        return byUserNameAndPassword;
     }
 
     public User getByUserName(String userName) {
