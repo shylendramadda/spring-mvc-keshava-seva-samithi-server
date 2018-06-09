@@ -20,7 +20,7 @@ public class Donor {
     private String updatedOn;
 
     private String surname;
-    private String name;
+    private String lastName;
     private String mobile;
     private String email;
 
@@ -96,12 +96,12 @@ public class Donor {
         this.surname = surname;
     }
 
-    public String getName() {
-        return name;
+    public String getLastName() {
+        return lastName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getMobile() {
