@@ -38,7 +38,7 @@ public class UserController {
     }
 
     @PostMapping(path = "/login")
-    public User login(@RequestBody User user) {
+    public Status login(@RequestBody User user) {
         return userService.login(user);
     }
 

@@ -22,7 +22,7 @@ public class DonorController {
         return donorService.create(donor);
     }
 
-    @PutMapping("/{uid}")
+    @PutMapping
     public Status update(@Valid @RequestBody Donor donor) {
         return donorService.update(donor);
     }
@@ -30,6 +30,16 @@ public class DonorController {
     @GetMapping("/")
     public Iterable<Donor> getAll() {
         return donorService.getAll();
+    }
+
+    @GetMapping(value = "/{uid}")
+    public Donor get(@PathVariable String uuid) {
+        return donorService.getByUuid(uuid);
+    }
+
+    @DeleteMapping(value = "/{uid}")
+    public Status delete(@PathVariable String uid) {
+        return donorService.delete(uid);
     }
 
 }

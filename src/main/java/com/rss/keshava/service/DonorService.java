@@ -2,6 +2,7 @@ package com.rss.keshava.service;
 
 import com.rss.keshava.domain.Donor;
 import com.rss.keshava.domain.Status;
+import com.rss.keshava.domain.User;
 import com.rss.keshava.repo.DonorRepository;
 import com.rss.keshava.utils.Constants;
 import com.rss.keshava.utils.DateUtils;
@@ -73,5 +74,23 @@ public class DonorService {
 
     public Iterable<Donor> getAll() {
         return donorRepository.findAll();
+    }
+
+    public Status delete(String uid) {
+        Donor dbUser = donorRepository.findByUid(uid);
+        if (dbUser != null) {
+            donorRepository.delete(dbUser);
+        } else {
+            return new Status(Constants.FAILED, "Donor not exists");
+        }
+        return new Status(Constants.SUCCESS, "Donor deleted");
+    }
+
+    public Donor getByUuid(String uuid) {
+        Donor dbUser = donorRepository.findByUid(uuid);
+        if (dbUser != null) {
+            return  dbUser;
+        }
+        return null;
     }
 }

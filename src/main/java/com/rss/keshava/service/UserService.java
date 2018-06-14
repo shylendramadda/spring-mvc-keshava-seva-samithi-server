@@ -77,9 +77,13 @@ public class UserService {
         return new ArrayList<>();
     }
 
-    public User login(User user) {
-        User byUserNameAndPassword = userRepository.findByUserNameAndPassword(user.getEmail(), user.getPassword());
-        return byUserNameAndPassword;
+    public Status login(User user) {
+        User dbUser = userRepository.findByEmailAndPassword(user.getEmail(), user.getPassword());
+        if (dbUser != null) {
+            return new Status(Constants.SUCCESS, "Logged in successfully.");
+        } else {
+            return new Status(Constants.FAILED, "Login failed, please try again.");
+        }
     }
 
     public User getByUserName(String userName) {
