@@ -8,5 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ImageRepository extends CrudRepository<ImageFile, Long> {
 
-    Donor findByUid(String uuid);
+    ImageFile findByUid(String uuid);
 }

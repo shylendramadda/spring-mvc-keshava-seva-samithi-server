@@ -8,17 +8,13 @@ import com.rss.keshava.utils.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.mvc.method.annotation.MvcUriComponentsBuilder;
 
 import javax.transaction.Transactional;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 import java.util.UUID;
-import java.util.stream.Collectors;
 
 @Transactional
 @Service
@@ -47,7 +43,7 @@ public class ImageService {
             imageFile.setCreatedOn(DateUtils.getDate1(time, DateUtils.DEFAULT_FORMAT));
             imageFile.setUid(UUID.randomUUID().toString()); // generates random UUID with 36 chars
 
-            imageFile.setName(uniqueFileName);
+            imageFile.setName(originalFilename);
             imageFile.setDescription(uniqueFileName);
             imageFile.setFilePath("http://localhost:8080/" + this.rootLocation.getFileName() + "/" + uniqueFileName);
 
@@ -61,5 +57,16 @@ public class ImageService {
 
     public Iterable<ImageFile> getAll() {
         return imageRepository.findAll();
+    }
+
+    public Status delete(String uid) {
+        ImageFile imageByUid = imageRepository.findByUid(uid);
+
+        if (imageByUid != null) {
+            imageRepository.delete(imageByUid);
+        } else {
+            return new Status(Constants.FAILED, "Image not exists");
+        }
+        return new Status(Constants.SUCCESS, "Image deleted");
     }
 }

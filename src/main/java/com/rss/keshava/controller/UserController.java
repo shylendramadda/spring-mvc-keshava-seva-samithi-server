@@ -28,8 +28,8 @@ public class UserController {
     }
 
     @DeleteMapping
-    public Status delete(@PathVariable String uuid) {
-        return userService.delete(uuid);
+    public Status delete(@PathVariable String uid) {
+        return userService.delete(uid);
     }
 
     @GetMapping(path = "/{uid}")

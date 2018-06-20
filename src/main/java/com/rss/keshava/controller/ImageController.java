@@ -24,4 +24,9 @@ public class ImageController {
     public Iterable<ImageFile> getAll(){
         return imageService.getAll();
     }
+
+    @DeleteMapping(value = "/{uid}")
+    public Status delete(@PathVariable String uid){
+        return imageService.delete(uid);
+    }
 }
