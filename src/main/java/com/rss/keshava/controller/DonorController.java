@@ -2,7 +2,6 @@ package com.rss.keshava.controller;
 
 import com.rss.keshava.domain.Donor;
 import com.rss.keshava.domain.Status;
-import com.rss.keshava.domain.User;
 import com.rss.keshava.service.DonorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

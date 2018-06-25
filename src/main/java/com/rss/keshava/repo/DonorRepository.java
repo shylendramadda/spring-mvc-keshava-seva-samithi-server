@@ -10,4 +10,6 @@ public interface DonorRepository extends CrudRepository<Donor, Long> {
     Donor findByEmailOrMobile(String email, String mobile);
 
     Donor findByUid(String uuid);
+
+    Donor findByEmailOrMobileOrSurname(String email, String mobile, String surname);
 }

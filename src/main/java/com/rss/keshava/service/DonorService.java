@@ -22,7 +22,7 @@ public class DonorService {
 
     public Status create(Donor donor) {
         try {
-            Donor dbUser = donorRepository.findByEmailOrMobile(donor.getEmail(), donor.getMobile());
+            Donor dbUser = donorRepository.findByEmailOrMobileOrSurname(donor.getEmail(), donor.getMobile(), donor.getSurname());
             if (dbUser != null) {
                 return new Status(Constants.FAILED, "Donor already exists");
             }
