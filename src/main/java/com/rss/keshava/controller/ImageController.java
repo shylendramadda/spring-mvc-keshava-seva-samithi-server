@@ -16,8 +16,8 @@ public class ImageController {
     private ImageService imageService;
 
     @PostMapping("/upload")
-    public Status upload(@RequestParam("file") MultipartFile file){
-        return imageService.upload(file);
+    public Status upload(@RequestParam("file") MultipartFile file, @RequestParam("description") String description){
+        return imageService.upload(file, description);
     }
 
     @GetMapping("/getAll")

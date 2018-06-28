@@ -25,7 +25,7 @@ public class ImageService {
 
     private final Path rootLocation = Paths.get("upload_dir");
 
-    public Status upload(MultipartFile file) {
+    public Status upload(MultipartFile file, String description) {
         try {
             long time = new Date().getTime();
 
@@ -44,7 +44,7 @@ public class ImageService {
             imageFile.setUid(UUID.randomUUID().toString()); // generates random UUID with 36 chars
 
             imageFile.setName(originalFilename);
-            imageFile.setDescription(uniqueFileName);
+            imageFile.setDescription(description);
             imageFile.setFilePath("http://localhost:8080/" + this.rootLocation.getFileName() + "/" + uniqueFileName);
 
             imageRepository.save(imageFile);
