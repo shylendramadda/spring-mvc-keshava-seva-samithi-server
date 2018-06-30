@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Date;
 
 @Entity
 public class Donor {
@@ -18,11 +19,27 @@ public class Donor {
     private long updateTime;
     private String createdOn;
     private String updatedOn;
-
     private String surname;
     private String lastName;
     private String mobile;
     private String email;
+    private String country;
+    private String state;
+    private String district;
+    private String houseNo;
+    private String mandal;
+    private String street;
+    private String landMark;
+    private String city;
+    private String postOffice;
+    private String eventOf;
+    private Date eventDate;
+    private String amountFor;
+    private String paymentType;
+    private String amount;
+    //private Date currentDate;
+
+
 
     public Long getId() {
         return id;
@@ -119,4 +136,124 @@ public class Donor {
     public void setEmail(String email) {
         this.email = email;
     }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getDistrict() {
+        return district;
+    }
+
+    public void setDistrict(String district) {
+        this.district = district;
+    }
+
+    public String getHouseNo() {
+        return houseNo;
+    }
+
+    public void setHouseNo(String houseNo) {
+        this.houseNo = houseNo;
+    }
+
+    public String getMandal() {
+        return mandal;
+    }
+
+    public void setMandal(String mandal) {
+        this.mandal = mandal;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public String getLandMark() {
+        return landMark;
+    }
+
+    public void setLandMark(String landMark) {
+        this.landMark = landMark;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getPostOffice() {
+        return postOffice;
+    }
+
+    public void setPostOffice(String postOffice) {
+        this.postOffice = postOffice;
+    }
+
+    public String getEventOf() {
+        return eventOf;
+    }
+
+    public void setEventOf(String eventOf) {
+        this.eventOf = eventOf;
+    }
+
+    public Date getEventDate() {
+        return eventDate;
+    }
+
+    public void setEventDate(Date eventDate) {
+        this.eventDate = eventDate;
+    }
+
+    public String getAmountFor() {
+        return amountFor;
+    }
+
+    public void setAmountFor(String amountFor) {
+        this.amountFor = amountFor;
+    }
+
+    public String getPaymentType() {
+        return paymentType;
+    }
+
+    public void setPaymentType(String paymentType) {
+        this.paymentType = paymentType;
+    }
+
+    public String getAmount() {
+        return amount;
+    }
+
+    public void setAmount(String amount) {
+        this.amount = amount;
+    }
+
+//    public Date getCurrentDate() {
+//        return currentDate;
+//    }
+//
+//    public void setCurrentDate(Date currentDate) {
+//        this.currentDate = currentDate;
+//    }
 }

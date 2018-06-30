@@ -35,6 +35,22 @@ public class DonorService {
             donor.setLastName(donor.getLastName());
             donor.setMobile(donor.getMobile());
             donor.setEmail(donor.getEmail());
+            donor.setAmount(donor.getAmount());
+            donor.setAmountFor(donor.getAmountFor());
+            donor.setCity(donor.getCity());
+            donor.setCountry(donor.getCountry());
+         //   donor.setCurrentDate(donor.getCurrentDate());
+            donor.setDistrict(donor.getDistrict());
+            donor.setEventDate(donor.getEventDate());
+            donor.setEventOf(donor.getEventOf());
+            donor.setHouseNo(donor.getHouseNo());
+            donor.setLandMark(donor.getLandMark());
+            donor.setMandal(donor.getMandal());
+            donor.setPaymentType(donor.getPaymentType());
+            donor.setPostOffice(donor.getPostOffice());
+            donor.setState(donor.getState());
+            donor.setStreet(donor.getStreet());
+
 
             donorRepository.save(donor);
 
@@ -58,6 +74,20 @@ public class DonorService {
                 dbUser.setLastName(donor.getLastName());
                 dbUser.setMobile(donor.getMobile());
                 dbUser.setEmail(donor.getEmail());
+                dbUser.setState(donor.getState());
+                dbUser.setPostOffice(donor.getPostOffice());
+                dbUser.setPaymentType(donor.getPaymentType());
+                dbUser.setMandal(donor.getMandal());
+                dbUser.setLandMark(donor.getLandMark());
+                dbUser.setHouseNo(donor.getHouseNo());
+                dbUser.setEventOf(donor.getEventOf());
+                dbUser.setDistrict(donor.getDistrict());
+                dbUser.setEventDate(donor.getEventDate());
+                dbUser.setCity(donor.getCity());
+                dbUser.setStreet(donor.getStreet());
+                dbUser.setCountry(donor.getCountry());
+                dbUser.setAmount(donor.getAmount());
+                //dbUser.setCurrentDate(donor.getCurrentDate());
                 dbUser.setUpdateTime(time);
                 dbUser.setUpdatedOn(DateUtils.getDate1(time, DateUtils.DEFAULT_FORMAT));
 
