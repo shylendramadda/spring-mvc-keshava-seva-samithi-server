@@ -19,6 +19,7 @@ public class Donor {
     private long updateTime;
     private String createdOn;
     private String updatedOn;
+
     private String surname;
     private String lastName;
     private String mobile;
@@ -37,9 +38,6 @@ public class Donor {
     private String amountFor;
     private String paymentType;
     private String amount;
-    //private Date currentDate;
-
-
 
     public Long getId() {
         return id;
@@ -249,11 +247,4 @@ public class Donor {
         this.amount = amount;
     }
 
-//    public Date getCurrentDate() {
-//        return currentDate;
-//    }
-//
-//    public void setCurrentDate(Date currentDate) {
-//        this.currentDate = currentDate;
-//    }
 }

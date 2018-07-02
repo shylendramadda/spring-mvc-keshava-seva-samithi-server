@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.UUID;
 
@@ -39,7 +40,6 @@ public class DonorService {
             donor.setAmountFor(donor.getAmountFor());
             donor.setCity(donor.getCity());
             donor.setCountry(donor.getCountry());
-         //   donor.setCurrentDate(donor.getCurrentDate());
             donor.setDistrict(donor.getDistrict());
             donor.setEventDate(donor.getEventDate());
             donor.setEventOf(donor.getEventOf());
@@ -50,7 +50,6 @@ public class DonorService {
             donor.setPostOffice(donor.getPostOffice());
             donor.setState(donor.getState());
             donor.setStreet(donor.getStreet());
-
 
             donorRepository.save(donor);
 
@@ -87,7 +86,6 @@ public class DonorService {
                 dbUser.setStreet(donor.getStreet());
                 dbUser.setCountry(donor.getCountry());
                 dbUser.setAmount(donor.getAmount());
-                //dbUser.setCurrentDate(donor.getCurrentDate());
                 dbUser.setUpdateTime(time);
                 dbUser.setUpdatedOn(DateUtils.getDate1(time, DateUtils.DEFAULT_FORMAT));
 
@@ -122,5 +120,14 @@ public class DonorService {
             return  dbUser;
         }
         return null;
+    }
+
+    public Iterable<Donor> getDonorsByInput(String inputString) {
+        Iterable<Donor> donorList = new ArrayList<>();
+        Donor dbUser = donorRepository.findByEmailOrMobileOrSurnameOrLastName(inputString, inputString, inputString, inputString);
+        if (dbUser != null) {
+            ((ArrayList<Donor>) donorList).add(dbUser);
+        }
+        return donorList;
     }
 }

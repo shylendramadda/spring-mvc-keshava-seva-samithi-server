@@ -31,6 +31,11 @@ public class DonorController {
         return donorService.getAll();
     }
 
+    @GetMapping("/search/{inputString}")
+    public Iterable<Donor> getDonorsByInput(@PathVariable String inputString) {
+        return donorService.getDonorsByInput(inputString);
+    }
+
     @GetMapping(value = "/{uid}")
     public Donor get(@PathVariable String uuid) {
         return donorService.getByUuid(uuid);
