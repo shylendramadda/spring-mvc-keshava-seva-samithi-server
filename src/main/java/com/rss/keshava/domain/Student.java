@@ -27,6 +27,7 @@ public class Student {
     private String orphan;
     private String gender;
     private String education;
+    private String email;
     //private String class;
     private String schoolAddress;
     private int adharNumber;
@@ -372,5 +373,13 @@ public class Student {
 
     public void setPhoto(String photo) {
         this.photo = photo;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
