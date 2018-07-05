@@ -39,4 +39,6 @@ dependencies {
 	providedRuntime('org.springframework.boot:spring-boot-starter-tomcat')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('org.springframework.security:spring-security-test')
+
+	compile group: "com.twilio.sdk", name: "twilio", version: "7.17.+"
 }
