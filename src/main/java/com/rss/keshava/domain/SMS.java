@@ -3,8 +3,8 @@ package com.rss.keshava.domain;
 public class SMS {
 
     private String name;
-    private String phoneNumber;
-    private String message;
+    private String toNumber;
+    private String body;
 
     public String getName() {
         return name;
@@ -14,19 +14,19 @@ public class SMS {
         this.name = name;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getToNumber() {
+        return toNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setToNumber(String toNumber) {
+        this.toNumber = toNumber;
     }
 
-    public String getMessage() {
-        return message;
+    public String getBody() {
+        return body;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setBody(String body) {
+        this.body = body;
     }
 }
