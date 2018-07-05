@@ -104,9 +104,9 @@ public class EmailService {
                     email1.setBody(email.getBody());
                     boolean isSent = send(email1);
                     if (isSent) {
-                        return new Status(Constants.SUCCESS, "Mails sent successfully", null, "");
+                        return new Status(Constants.SUCCESS, "Mails sent successfully", null, email1);
                     } else {
-                        return new Status(Constants.FAILED, "Failed to send mails", null, "");
+                        return new Status(Constants.FAILED, "Failed to send mails", null, email1);
                     }
                 }
                 break;
@@ -124,9 +124,9 @@ public class EmailService {
                     send(email1);
                     boolean isSent = send(email1);
                     if (isSent) {
-                        return new Status(Constants.SUCCESS, "Mails sent successfully", null, "");
+                        return new Status(Constants.SUCCESS, "Mails sent successfully", null, email1);
                     } else {
-                        return new Status(Constants.FAILED, "Failed to send mails", null, "");
+                        return new Status(Constants.FAILED, "Failed to send mails", null, email1);
                     }
                 }
                 break;
@@ -144,9 +144,9 @@ public class EmailService {
                     send(email1);
                     boolean isSent = send(email1);
                     if (isSent) {
-                        return new Status(Constants.SUCCESS, "Mails sent successfully", null, "");
+                        return new Status(Constants.SUCCESS, "Mails sent successfully", null, email1);
                     } else {
-                        return new Status(Constants.FAILED, "Failed to send mails", null, "");
+                        return new Status(Constants.FAILED, "Failed to send mails", null, email1);
                     }
                 }
                 break;
@@ -164,9 +164,9 @@ public class EmailService {
                     send(email1);
                     boolean isSent = send(email1);
                     if (isSent) {
-                        return new Status(Constants.SUCCESS, "Mails sent successfully", null, "");
+                        return new Status(Constants.SUCCESS, "Mails sent successfully", null, email1);
                     } else {
-                        return new Status(Constants.FAILED, "Failed to send mails", null, "");
+                        return new Status(Constants.FAILED, "Failed to send mails", null, email1);
                     }
                 }
                 break;
