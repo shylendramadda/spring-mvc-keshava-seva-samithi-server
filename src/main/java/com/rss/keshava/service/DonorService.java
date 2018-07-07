@@ -117,16 +117,20 @@ public class DonorService {
     public Donor getByUuid(String uuid) {
         Donor dbUser = donorRepository.findByUid(uuid);
         if (dbUser != null) {
-            return  dbUser;
+            return dbUser;
         }
         return null;
     }
 
     public Iterable<Donor> getDonorsByInput(String inputString) {
-        Iterable<Donor> donorList = new ArrayList<>();
-        Donor dbUser = donorRepository.findByEmailOrMobileOrSurnameOrLastName(inputString, inputString, inputString, inputString);
-        if (dbUser != null) {
-            ((ArrayList<Donor>) donorList).add(dbUser);
+        Iterable<Donor> donorList;
+        donorList = donorRepository.findByEmailOrMobileOrSurnameOrLastName(inputString, inputString, inputString, inputString);
+        if (donorList != null) {
+            for (Donor donor : donorList) {
+                if (donor != null) {
+                    ((ArrayList<Donor>) donorList).add(donor);
+                }
+            }
         }
         return donorList;
     }

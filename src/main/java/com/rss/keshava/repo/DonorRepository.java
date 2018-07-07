@@ -13,5 +13,5 @@ public interface DonorRepository extends CrudRepository<Donor, Long> {
 
     Donor findByEmailOrMobileOrSurname(String email, String mobile, String surname);
 
-    Donor findByEmailOrMobileOrSurnameOrLastName(String email, String mobile, String surname, String lastName);
+    Iterable<Donor> findByEmailOrMobileOrSurnameOrLastName(String email, String mobile, String surname, String lastName);
 }

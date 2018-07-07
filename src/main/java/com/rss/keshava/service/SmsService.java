@@ -25,23 +25,23 @@ public class SmsService {
 
         try {
 
-            /*Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+            Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
 
             Message message = Message
                     .creator(new PhoneNumber("+91" + sms.getToNumber()), // to
-                            new PhoneNumber("+18084009326"), // from
+                            new PhoneNumber("+18084009326"), // from this is trail account number (only it works with this for now)
                             sms.getBody())
                     .create();
-            System.out.println(message.getSid());*/
+            System.out.println(message.getSid());
 
-            RestTemplate rt = new RestTemplate();
+            /*RestTemplate rt = new RestTemplate();
             rt.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
             rt.getMessageConverters().add(new StringHttpMessageConverter());
 
             String url = "https://hapi.smsapi.org/SendSMS.aspx?UserName=Evolve_SMS&password=170393&MobileNo=" + sms.getToNumber() + "&SenderID=EVOLVE&CDMAHeader=EVOLVE&Message=" + sms.getBody();
 
             String smsResp = rt.getForObject(url, String.class);
-            System.out.println(smsResp + "--------" + sms.getBody());
+            System.out.println(smsResp + "--------" + sms.getBody());*/
 
             return new Status(Constants.SUCCESS, "SMS sent successfully", null, sms);
         } catch (Exception e) {
