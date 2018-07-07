@@ -4,6 +4,8 @@ import com.rss.keshava.domain.Donor;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface DonorRepository extends CrudRepository<Donor, Long> {
 
@@ -13,5 +15,5 @@ public interface DonorRepository extends CrudRepository<Donor, Long> {
 
     Donor findByEmailOrMobileOrSurname(String email, String mobile, String surname);
 
-    Iterable<Donor> findByEmailOrMobileOrSurnameOrLastName(String email, String mobile, String surname, String lastName);
+    List<Donor> findByEmailIgnoreCaseContainingOrMobileIgnoreCaseContainingOrSurnameIgnoreCaseContainingOrLastNameIgnoreCaseContaining(String email, String mobile, String surname, String lastName);
 }

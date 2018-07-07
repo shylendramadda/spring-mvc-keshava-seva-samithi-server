@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import javax.transaction.Transactional;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @Transactional
@@ -123,15 +124,6 @@ public class DonorService {
     }
 
     public Iterable<Donor> getDonorsByInput(String inputString) {
-        Iterable<Donor> donorList;
-        donorList = donorRepository.findByEmailOrMobileOrSurnameOrLastName(inputString, inputString, inputString, inputString);
-        if (donorList != null) {
-            for (Donor donor : donorList) {
-                if (donor != null) {
-                    ((ArrayList<Donor>) donorList).add(donor);
-                }
-            }
-        }
-        return donorList;
+       return donorRepository.findByEmailIgnoreCaseContainingOrMobileIgnoreCaseContainingOrSurnameIgnoreCaseContainingOrLastNameIgnoreCaseContaining(inputString, inputString, inputString, inputString);
     }
 }
