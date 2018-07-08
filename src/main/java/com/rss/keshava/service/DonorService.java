@@ -26,7 +26,7 @@ public class DonorService {
         try {
             Donor dbUser = donorRepository.findByEmailOrMobileOrSurname(donor.getEmail(), donor.getMobile(), donor.getSurname());
             if (dbUser != null) {
-                return new Status(Constants.FAILED, "Donor already exists");
+                return new Status(Constants.FAILED, "Donor already exists", dbUser.getId(), dbUser);
             }
             long time = new Date().getTime();
             donor.setCreateTime(time);
