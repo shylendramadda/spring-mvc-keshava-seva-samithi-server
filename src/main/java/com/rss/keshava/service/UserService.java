@@ -31,6 +31,7 @@ public class UserService {
         String roles = Role.USER.name() + "," + Role.COMMITTEE_MEMBER.name();
         user.setRoles(roles);
         user.setCreatedOn(DateUtils.getDate1(time, DateUtils.DEFAULT_FORMAT));
+        user.setUpdatedOn(DateUtils.getDate1(time, DateUtils.DEFAULT_FORMAT));
         user.setUid(UUID.randomUUID().toString()); // generates random UUID with 36 chars
         userRepository.save(user);
 
@@ -41,14 +42,9 @@ public class UserService {
         User dbUser = userRepository.findByEmailOrMobile(user.getEmail(), user.getMobile());
         if (dbUser != null) {
             long time = new Date().getTime();
-            dbUser.setName(user.getName());
-            dbUser.setEmail(user.getEmail());
-            dbUser.setMobile(user.getMobile());
-            dbUser.setUserName(user.getUserName());
-            dbUser.setPassword(user.getPassword());
-            dbUser.setUpdateTime(time);
-            dbUser.setUpdatedOn(DateUtils.getDate1(time, DateUtils.DEFAULT_FORMAT));
-            userRepository.save(dbUser);
+            user.setUpdateTime(time);
+            user.setUpdatedOn(DateUtils.getDate1(time, DateUtils.DEFAULT_FORMAT));
+            userRepository.save(user);
         } else {
             return new Status(Constants.FAILED, "User not exists");
         }

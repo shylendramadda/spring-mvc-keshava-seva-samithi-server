@@ -20,9 +20,7 @@ public class SmsService {
     public static final String AUTH_TOKEN =
             "6e650ae1cae3507e9eb359fdeb15b8e7";
 
-
     public Status sendSmss(SMS sms) {
-
         try {
 
             Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
@@ -38,6 +36,7 @@ public class SmsService {
             rt.getMessageConverters().add(new MappingJackson2HttpMessageConverter());
             rt.getMessageConverters().add(new StringHttpMessageConverter());
 
+            // Balu office url for testing sms
             String url = "https://hapi.smsapi.org/SendSMS.aspx?UserName=Evolve_SMS&password=170393&MobileNo=" + sms.getToNumber() + "&SenderID=EVOLVE&CDMAHeader=EVOLVE&Message=" + sms.getBody();
 
             String smsResp = rt.getForObject(url, String.class);

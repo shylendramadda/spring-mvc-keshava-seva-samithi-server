@@ -25,21 +25,11 @@ public class CommitteeMemberService {
                 return new Status(Constants.FAILED, "Committee Member already exists");
             }
             long time = new Date().getTime();
-            committeeMember.setCreateTime(time);
-            committeeMember.setCreatedOn(DateUtils.getDate1(time, DateUtils.DEFAULT_FORMAT));
             committeeMember.setUid(UUID.randomUUID().toString()); // generates random UUID with 36 chars
-
-            committeeMember.setSurName(committeeMember.getSurName());
-            committeeMember.setLastName(committeeMember.getLastName());
-            committeeMember.setMobileNumber(committeeMember.getMobileNumber());
-            committeeMember.setEmailId(committeeMember.getEmailId());
-            committeeMember.setAddress(committeeMember.getAddress());
-            committeeMember.setAdharNumber(committeeMember.getAdharNumber());
-            committeeMember.setDesignation(committeeMember.getDesignation());
-            committeeMember.setGender(committeeMember.getGender());
-            committeeMember.setFromDate(committeeMember.getFromDate());
-            committeeMember.setThruDate(committeeMember.getThruDate());
-            committeeMember.setPhoto(committeeMember.getPhoto());
+            committeeMember.setCreatedOn(DateUtils.getDate1(time, DateUtils.DEFAULT_FORMAT));
+            committeeMember.setUpdatedOn(DateUtils.getDate1(time, DateUtils.DEFAULT_FORMAT));
+            committeeMember.setCreateTime(time);
+            committeeMember.setUpdateTime(time);
 
             committeeMemberRepository.save(committeeMember);
 
@@ -55,26 +45,10 @@ public class CommitteeMemberService {
             CommitteeMember dbUser = committeeMemberRepository.findBysurName(committeeMember.getSurName());
             if (dbUser != null) {
                 long time = new Date().getTime();
-                dbUser.setCreateTime(time);
-                dbUser.setCreatedOn(DateUtils.getDate1(time, DateUtils.DEFAULT_FORMAT));
-                dbUser.setUid(UUID.randomUUID().toString()); // generates random UUID with 36 chars
+                committeeMember.setUpdateTime(time);
+                committeeMember.setUpdatedOn(DateUtils.getDate1(time, DateUtils.DEFAULT_FORMAT));
 
-                dbUser.setSurName(dbUser.getSurName());
-                dbUser.setLastName(dbUser.getLastName());
-                dbUser.setMobileNumber(dbUser.getMobileNumber());
-                dbUser.setEmailId(dbUser.getEmailId());
-                dbUser.setAddress(dbUser.getAddress());
-                dbUser.setAdharNumber(dbUser.getAdharNumber());
-                dbUser.setDesignation(dbUser.getDesignation());
-                dbUser.setGender(dbUser.getGender());
-                dbUser.setFromDate(dbUser.getFromDate());
-                dbUser.setThruDate(dbUser.getThruDate());
-                dbUser.setPhoto(dbUser.getPhoto());
-
-                dbUser.setUpdateTime(time);
-                dbUser.setUpdatedOn(DateUtils.getDate1(time, DateUtils.DEFAULT_FORMAT));
-
-                committeeMemberRepository.save(dbUser);
+                committeeMemberRepository.save(committeeMember);
             } else {
                 return new Status(Constants.FAILED, "Committee Member doesn't exist", committeeMember.getId(), committeeMember);
             }

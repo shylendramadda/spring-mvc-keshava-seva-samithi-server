@@ -26,11 +26,11 @@ public class VideoService {
             return new Status(Constants.FAILED, "Video already exists");
         }
         long time = new Date().getTime();
-        video.setCreatedOn(DateUtils.getDate1(time, DateUtils.DEFAULT_FORMAT));
         video.setUid(UUID.randomUUID().toString()); // generates random UUID with 36 chars
-        video.setName(video.getName());
-        video.setDescription(video.getDescription());
-        video.setUrl(video.getUrl());
+        video.setCreatedOn(DateUtils.getDate1(time, DateUtils.DEFAULT_FORMAT));
+        video.setUpdatedOn(DateUtils.getDate1(time, DateUtils.DEFAULT_FORMAT));
+        video.setCreateTime(time);
+        video.setUpdateTime(time);
 
         videoRepository.save(video);
         return new Status(Constants.SUCCESS, "Video saved", video.getId(), video);
@@ -41,12 +41,10 @@ public class VideoService {
 
         if (videoByUid != null) {
             long time = new Date().getTime();
-            videoByUid.setName(video.getName());
-            videoByUid.setDescription(video.getDescription());
-            videoByUid.setUrl(video.getUrl());
-            videoByUid.setUpdatedOn(DateUtils.getDate1(time, DateUtils.DEFAULT_FORMAT));
+            video.setUpdateTime(time);
+            video.setUpdatedOn(DateUtils.getDate1(time, DateUtils.DEFAULT_FORMAT));
 
-            videoRepository.save(videoByUid);
+            videoRepository.save(video);
         } else {
             return new Status(Constants.FAILED, "Video not exists");
         }

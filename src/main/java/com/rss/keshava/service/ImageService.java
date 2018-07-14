@@ -39,9 +39,11 @@ public class ImageService {
 
             ImageFile imageFile = new ImageFile();
 
+            imageFile.setUid(UUID.randomUUID().toString()); // generates random UUID with 36 chars
             imageFile.setCreateTime(time);
             imageFile.setCreatedOn(DateUtils.getDate1(time, DateUtils.DEFAULT_FORMAT));
-            imageFile.setUid(UUID.randomUUID().toString()); // generates random UUID with 36 chars
+            imageFile.setUpdatedOn(DateUtils.getDate1(time, DateUtils.DEFAULT_FORMAT));
+            imageFile.setUpdateTime(time);
 
             imageFile.setName(originalFilename);
             imageFile.setDescription(description);

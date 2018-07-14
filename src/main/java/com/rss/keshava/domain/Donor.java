@@ -34,7 +34,7 @@ public class Donor {
     private String city;
     private String postOffice;
     private String eventOf;
-    private Date eventDate;
+    private String eventDate;
     private String amountFor;
     private String paymentType;
     private String amount;
@@ -215,11 +215,11 @@ public class Donor {
         this.eventOf = eventOf;
     }
 
-    public Date getEventDate() {
+    public String getEventDate() {
         return eventDate;
     }
 
-    public void setEventDate(Date eventDate) {
+    public void setEventDate(String eventDate) {
         this.eventDate = eventDate;
     }
 

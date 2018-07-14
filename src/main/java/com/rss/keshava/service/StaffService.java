@@ -25,21 +25,11 @@ public class StaffService {
                 return new Status(Constants.FAILED, "Staff already exists");
             }
             long time = new Date().getTime();
-            staff.setCreateTime(time);
-            staff.setCreatedOn(DateUtils.getDate1(time, DateUtils.DEFAULT_FORMAT));
             staff.setUid(UUID.randomUUID().toString()); // generates random UUID with 36 chars
-
-            staff.setSurName(staff.getSurName());
-            staff.setLastName(staff.getLastName());
-            staff.setMobileNumber(staff.getMobileNumber());
-            staff.setEmailId(staff.getEmailId());
-            staff.setAddress(staff.getAddress());
-            staff.setAdharNumber(staff.getAdharNumber());
-            staff.setDesignation(staff.getDesignation());
-            staff.setGender(staff.getGender());
-            staff.setFromDate(staff.getFromDate());
-            staff.setThruDate(staff.getThruDate());
-            staff.setPhoto(staff.getPhoto());
+            staff.setCreatedOn(DateUtils.getDate1(time, DateUtils.DEFAULT_FORMAT));
+            staff.setUpdatedOn(DateUtils.getDate1(time, DateUtils.DEFAULT_FORMAT));
+            staff.setCreateTime(time);
+            staff.setUpdateTime(time);
 
             staffRepository.save(staff);
 
@@ -55,26 +45,10 @@ public class StaffService {
             Staff dbUser = staffRepository.findBysurName(staff.getSurName());
             if (dbUser != null) {
                 long time = new Date().getTime();
-                dbUser.setCreateTime(time);
-                dbUser.setCreatedOn(DateUtils.getDate1(time, DateUtils.DEFAULT_FORMAT));
-                dbUser.setUid(UUID.randomUUID().toString()); // generates random UUID with 36 chars
+                staff.setUpdateTime(time);
+                staff.setUpdatedOn(DateUtils.getDate1(time, DateUtils.DEFAULT_FORMAT));
 
-                dbUser.setSurName(dbUser.getSurName());
-                dbUser.setLastName(dbUser.getLastName());
-                dbUser.setMobileNumber(dbUser.getMobileNumber());
-                dbUser.setEmailId(dbUser.getEmailId());
-                dbUser.setAddress(dbUser.getAddress());
-                dbUser.setAdharNumber(dbUser.getAdharNumber());
-                dbUser.setDesignation(dbUser.getDesignation());
-                dbUser.setGender(dbUser.getGender());
-                dbUser.setFromDate(dbUser.getFromDate());
-                dbUser.setThruDate(dbUser.getThruDate());
-                dbUser.setPhoto(dbUser.getPhoto());
-
-                dbUser.setUpdateTime(time);
-                dbUser.setUpdatedOn(DateUtils.getDate1(time, DateUtils.DEFAULT_FORMAT));
-
-                staffRepository.save(dbUser);
+                staffRepository.save(staff);
             } else {
                 return new Status(Constants.FAILED, "Staff doesn't exist", staff.getId(), staff);
             }
