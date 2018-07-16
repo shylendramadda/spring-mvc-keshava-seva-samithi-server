@@ -46,7 +46,7 @@ public class DonorService {
 
     public Status update(Donor donor) {
         try {
-            Donor dbUser = donorRepository.findByEmailOrMobile(donor.getEmail(), donor.getMobile());
+            Donor dbUser = donorRepository.findByUid(donor.getUid());
             if (dbUser != null) {
                 long time = new Date().getTime();
                 donor.setUpdatedOn(DateUtils.getDate1(time, DateUtils.DEFAULT_FORMAT));
