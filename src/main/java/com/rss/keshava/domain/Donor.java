@@ -1,5 +1,7 @@
 package com.rss.keshava.domain;
 
+import org.springframework.stereotype.Component;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,6 +9,7 @@ import javax.persistence.Id;
 import java.util.Date;
 
 @Entity
+@Component
 public class Donor {
 
     @Id
@@ -254,5 +257,9 @@ public class Donor {
 
     public void setPincode(int pincode) {
         this.pincode = pincode;
+    }
+
+    public int getColumnCount() {
+        return getClass().getDeclaredFields().length;
     }
 }

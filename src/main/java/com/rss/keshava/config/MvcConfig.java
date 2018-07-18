@@ -24,15 +24,15 @@ public class MvcConfig implements WebMvcConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry
                 .addResourceHandler("/upload_dir/**")
-                .addResourceLocations(new File("D:/SHAILENDRA/Shylu/Projects/kss_server/upload_dir/").toURI().toString());
+                .addResourceLocations(new File("E:/Professional/Projects/Web/KSS/kss_server/upload_dir/").toURI().toString());
     }
 
-    /*@Override
+    @Override
     public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
         configurer
                 .defaultContentType(MediaType.APPLICATION_JSON)
                 .favorPathExtension(true);
-    }*/
+    }
 
     /*
      * Configure ContentNegotiatingViewResolver

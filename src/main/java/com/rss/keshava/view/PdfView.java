@@ -21,9 +21,10 @@ public class PdfView extends AbstractPdfView {
         response.setHeader("Content-Disposition", "attachment; filename=\"donor-pdf-file.pdf\"");
 
         List<Donor> donors = (List<Donor>) model.get("donors");
-        document.add(new Paragraph("Generated Users " + LocalDate.now()));
+        document.add(new Paragraph("Donors List " + LocalDate.now()));
 
-        PdfPTable table = new PdfPTable(donors.size());
+//        PdfPTable table = new PdfPTable(donors.stream().findAny().get().getColumnCount());
+        PdfPTable table = new PdfPTable(4);
         table.setWidthPercentage(100.0f);
         table.setSpacingBefore(10);
 
