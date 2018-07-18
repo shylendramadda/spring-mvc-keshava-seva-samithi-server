@@ -2,18 +2,16 @@ package com.rss.keshava.service;
 
 import com.rss.keshava.domain.Donor;
 import com.rss.keshava.domain.Status;
-import com.rss.keshava.domain.User;
 import com.rss.keshava.repo.DonorRepository;
 import com.rss.keshava.utils.Constants;
 import com.rss.keshava.utils.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.transaction.Transactional;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 @Transactional
 @Service
@@ -86,6 +84,11 @@ public class DonorService {
     }
 
     public Iterable<Donor> getDonorsByInput(String inputString) {
-       return donorRepository.findByEmailIgnoreCaseContainingOrMobileIgnoreCaseContainingOrSurnameIgnoreCaseContainingOrLastNameIgnoreCaseContaining(inputString, inputString, inputString, inputString);
+        return donorRepository.findByEmailIgnoreCaseContainingOrMobileIgnoreCaseContainingOrSurnameIgnoreCaseContainingOrLastNameIgnoreCaseContaining(inputString, inputString, inputString, inputString);
     }
+
+    public ModelAndView downloadPdf() {
+       return new ModelAndView("pdfView", "donors", donorRepository.findAll());
+    }
+
 }

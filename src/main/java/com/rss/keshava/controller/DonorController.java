@@ -4,7 +4,9 @@ import com.rss.keshava.domain.Donor;
 import com.rss.keshava.domain.Status;
 import com.rss.keshava.service.DonorService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 
@@ -29,6 +31,11 @@ public class DonorController {
     @GetMapping("/")
     public Iterable<Donor> getAll() {
         return donorService.getAll();
+    }
+
+    @GetMapping("/downloadPdf")
+    public ModelAndView downloadPdf() {
+        return donorService.downloadPdf();
     }
 
     @GetMapping("/search/{inputString}")

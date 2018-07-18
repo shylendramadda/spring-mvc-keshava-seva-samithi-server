@@ -41,4 +41,10 @@ dependencies {
 	testCompile('org.springframework.security:spring-security-test')
 
 	compile group: "com.twilio.sdk", name: "twilio", version: "7.17.+"
+	// https://mvnrepository.com/artifact/com.itextpdf/itextpdf
+	compile group: 'com.itextpdf', name: 'itextpdf', version: '5.5.13'
+	// https://mvnrepository.com/artifact/org.apache.poi/poi
+	compile group: 'org.apache.poi', name: 'poi', version: '3.17'
+
+
 }
