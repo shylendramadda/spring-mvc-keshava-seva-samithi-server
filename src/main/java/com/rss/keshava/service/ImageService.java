@@ -14,7 +14,9 @@ import javax.transaction.Transactional;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.UUID;
 
 @Transactional
@@ -109,7 +111,14 @@ public class ImageService {
     }
 
     public Iterable<ImageFile> getAll() {
-        return imageRepository.findAll();
+        List<ImageFile> galleryImages = new ArrayList<>();
+        Iterable<ImageFile> all = imageRepository.findAll();
+        for (ImageFile imageFile:all) {
+            if (imageFile.getUserUid()== null){
+                galleryImages.add(imageFile);
+            }
+        }
+        return galleryImages;
     }
 
     public Status delete(String uid) {
