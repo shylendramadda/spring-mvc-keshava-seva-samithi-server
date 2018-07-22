@@ -20,7 +20,7 @@ public class CommitteeMemberService {
 
     public Status create(CommitteeMember committeeMember) {
         try {
-            CommitteeMember dbUser = committeeMemberRepository.findBysurName(committeeMember.getSurName());
+            CommitteeMember dbUser = committeeMemberRepository.findByEmailOrMobileOrSurName(committeeMember.getEmail(), committeeMember.getMobile(), committeeMember.getSurName());
             if (dbUser != null) {
                 return new Status(Constants.FAILED, "Committee Member already exists");
             }
@@ -42,7 +42,7 @@ public class CommitteeMemberService {
 
     public Status update(CommitteeMember committeeMember) {
         try {
-            CommitteeMember dbUser = committeeMemberRepository.findBysurName(committeeMember.getSurName());
+            CommitteeMember dbUser = committeeMemberRepository.findByUid(committeeMember.getUid());
             if (dbUser != null) {
                 long time = new Date().getTime();
                 committeeMember.setUpdateTime(time);

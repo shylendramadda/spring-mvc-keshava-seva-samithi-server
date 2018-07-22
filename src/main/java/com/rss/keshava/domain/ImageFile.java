@@ -22,6 +22,7 @@ public class ImageFile {
     private String name;
     private String description;
     private String filePath;
+    private String userUid;
 
     public Long getId() {
         return id;
@@ -109,5 +110,13 @@ public class ImageFile {
 
     public void setFilePath(String filePath) {
         this.filePath = filePath;
+    }
+
+    public String getUserUid() {
+        return userUid;
+    }
+
+    public void setUserUid(String userUid) {
+        this.userUid = userUid;
     }
 }

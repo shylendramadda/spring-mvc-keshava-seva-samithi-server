@@ -7,7 +7,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface CommitteeMemberRepository extends CrudRepository<CommitteeMember, Long> {
-    CommitteeMember findBysurName(String surName);
+
+    CommitteeMember findByEmailOrMobileOrSurName(String email, String mobile, String surName);
 
     CommitteeMember findByUid(String uuid);
 }

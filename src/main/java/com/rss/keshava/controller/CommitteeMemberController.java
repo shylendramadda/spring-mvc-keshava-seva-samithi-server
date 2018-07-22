@@ -3,8 +3,10 @@ package com.rss.keshava.controller;
 import com.rss.keshava.domain.CommitteeMember;
 import com.rss.keshava.domain.Status;
 import com.rss.keshava.service.CommitteeMemberService;
+import com.rss.keshava.service.ImageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.validation.Valid;
 
@@ -14,6 +16,8 @@ import javax.validation.Valid;
 public class CommitteeMemberController {
     @Autowired
     private CommitteeMemberService committeeMemberService;
+    @Autowired
+    private ImageService imageService;
 
     @PostMapping
     public Status create(@RequestBody CommitteeMember committeeMember) {
@@ -38,6 +42,11 @@ public class CommitteeMemberController {
     @DeleteMapping(value = "/{uid}")
     public Status delete(@PathVariable String uid) {
         return committeeMemberService.delete(uid);
+    }
+
+    @PostMapping("/upload")
+    public Status upload(@RequestParam("file") MultipartFile file, @RequestParam("memberId") String memberId){
+        return imageService.uploadUserImage(file, memberId, "member");
     }
 }
 

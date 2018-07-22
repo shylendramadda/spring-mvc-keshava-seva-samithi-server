@@ -133,7 +133,7 @@ public class EmailService {
             case "CommiteeMembers":
                 Iterable<CommitteeMember> committeeMemberIterable = committeeMemberService.getAll();
                 for (CommitteeMember committeeMember : committeeMemberIterable) {
-                    commiteeMemberMails.add(committeeMember.getEmailId());
+                    commiteeMemberMails.add(committeeMember.getEmail());
                 }
                 if (commiteeMemberMails.size() > 0) {
                     Email email1 = new Email();

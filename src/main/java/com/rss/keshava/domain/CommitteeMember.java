@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Date;
+
 @Entity
 public class CommitteeMember {
 
@@ -21,14 +22,25 @@ public class CommitteeMember {
 
     private String surName;
     private String lastName;
-    private String mobileNumber;
-    private String emailId;
-    private int adharNumber;
-    private String designation;
-    private String address;
+    private String email;
+    private String mobile;
+    private String age;
     private String gender;
-    private Date fromDate;
-    private Date thruDate;
+    private String adharNumber;
+
+    private String houseNo;
+    private String landMark;
+    private String street;
+    private String postOffice;
+    private String city;
+    private String mandal;
+    private String district;
+    private String state;
+    private String country;
+
+    private String designation;
+    private String fromDate;
+    private String thruDate;
     private String photo;
 
     public Long getId() {
@@ -111,28 +123,20 @@ public class CommitteeMember {
         this.lastName = lastName;
     }
 
-    public String getMobileNumber() {
-        return mobileNumber;
+    public String getMobile() {
+        return mobile;
     }
 
-    public void setMobileNumber(String mobileNumber) {
-        this.mobileNumber = mobileNumber;
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
     }
 
-    public String getEmailId() {
-        return emailId;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEmailId(String emailId) {
-        this.emailId = emailId;
-    }
-
-    public int getAdharNumber() {
-        return adharNumber;
-    }
-
-    public void setAdharNumber(int adharNumber) {
-        this.adharNumber = adharNumber;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getDesignation() {
@@ -143,12 +147,84 @@ public class CommitteeMember {
         this.designation = designation;
     }
 
-    public String getAddress() {
-        return address;
+    public String getAge() {
+        return age;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public String getHouseNo() {
+        return houseNo;
+    }
+
+    public void setHouseNo(String houseNo) {
+        this.houseNo = houseNo;
+    }
+
+    public String getLandMark() {
+        return landMark;
+    }
+
+    public void setLandMark(String landMark) {
+        this.landMark = landMark;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public String getPostOffice() {
+        return postOffice;
+    }
+
+    public void setPostOffice(String postOffice) {
+        this.postOffice = postOffice;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getMandal() {
+        return mandal;
+    }
+
+    public void setMandal(String mandal) {
+        this.mandal = mandal;
+    }
+
+    public String getDistrict() {
+        return district;
+    }
+
+    public void setDistrict(String district) {
+        this.district = district;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 
     public String getGender() {
@@ -159,19 +235,27 @@ public class CommitteeMember {
         this.gender = gender;
     }
 
-    public Date getFromDate() {
+    public String getAdharNumber() {
+        return adharNumber;
+    }
+
+    public void setAdharNumber(String adharNumber) {
+        this.adharNumber = adharNumber;
+    }
+
+    public String getFromDate() {
         return fromDate;
     }
 
-    public void setFromDate(Date fromDate) {
+    public void setFromDate(String fromDate) {
         this.fromDate = fromDate;
     }
 
-    public Date getThruDate() {
+    public String getThruDate() {
         return thruDate;
     }
 
-    public void setThruDate(Date thruDate) {
+    public void setThruDate(String thruDate) {
         this.thruDate = thruDate;
     }
 
