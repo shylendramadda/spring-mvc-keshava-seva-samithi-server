@@ -112,7 +112,7 @@ public class ImageService {
 
     public List<ImageFile> getAllGalleryImages() {
         List<ImageFile> allImages = (List<ImageFile>) imageRepository.findAll();
-        return  allImages.stream().filter(i -> i.getUserUid() == null).collect(Collectors.toList());
+        return  allImages.stream().parallel().filter(i -> i.getUserUid() == null).collect(Collectors.toList());
     }
 
     public Status delete(String uid) {
