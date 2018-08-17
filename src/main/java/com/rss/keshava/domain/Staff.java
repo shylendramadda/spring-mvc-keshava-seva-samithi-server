@@ -23,13 +23,104 @@ public class Staff {
     private String lastName;
     private String mobileNumber;
     private String emailId;
-    private int adharNumber;
+    private String adharNumber;
     private String designation;
     private String address;
     private String gender;
-    private Date fromDate;
-    private Date thruDate;
+    private String fromDate;
+    private String thruDate;
     private String photo;
+    private String age;
+    private String country;
+    private String state;
+    private String district;
+    private String mandal;
+    private String houseNo;
+    private String street;
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getDistrict() {
+        return district;
+    }
+
+    public void setDistrict(String district) {
+        this.district = district;
+    }
+
+    public String getMandal() {
+        return mandal;
+    }
+
+    public void setMandal(String mandal) {
+        this.mandal = mandal;
+    }
+
+    public String getHouseNo() {
+        return houseNo;
+    }
+
+    public void setHouseNo(String houseNo) {
+        this.houseNo = houseNo;
+    }
+
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public String getLandMark() {
+        return landMark;
+    }
+
+    public void setLandMark(String landMark) {
+        this.landMark = landMark;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public String getPostOffice() {
+        return postOffice;
+    }
+
+    public void setPostOffice(String postOffice) {
+        this.postOffice = postOffice;
+    }
+
+    private String landMark;
+    private String city;
+    private String postOffice;
 
     public Long getId() {
         return id;
@@ -127,11 +218,11 @@ public class Staff {
         this.emailId = emailId;
     }
 
-    public int getAdharNumber() {
+    public String getAdharNumber() {
         return adharNumber;
     }
 
-    public void setAdharNumber(int adharNumber) {
+    public void setAdharNumber(String adharNumber) {
         this.adharNumber = adharNumber;
     }
 
@@ -159,19 +250,19 @@ public class Staff {
         this.gender = gender;
     }
 
-    public Date getFromDate() {
+    public String getFromDate() {
         return fromDate;
     }
 
-    public void setFromDate(Date fromDate) {
+    public void setFromDate(String fromDate) {
         this.fromDate = fromDate;
     }
 
-    public Date getThruDate() {
+    public String getThruDate() {
         return thruDate;
     }
 
-    public void setThruDate(Date thruDate) {
+    public void setThruDate(String thruDate) {
         this.thruDate = thruDate;
     }
 

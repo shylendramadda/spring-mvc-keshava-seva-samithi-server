@@ -1,10 +1,12 @@
 package com.rss.keshava.controller;
 
+import com.rss.keshava.domain.Donor;
 import com.rss.keshava.domain.Status;
 import com.rss.keshava.domain.Student;
 import com.rss.keshava.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 
@@ -40,4 +42,13 @@ public class StudentController {
         return studentService.delete(id);
     }
 
+    @GetMapping("/downloadPdf")
+    public ModelAndView downloadPdf() {
+        return studentService.downloadPdf();
+    }
+
+    @GetMapping("/search/{inputString}")
+    public Iterable<Student> getStudentsByInput(@PathVariable String inputString) {
+        return studentService.getStudentsByInput(inputString);
+    }
 }

@@ -2,6 +2,7 @@ package com.rss.keshava.service;
 
 import com.rss.keshava.domain.CommitteeMember;
 import com.rss.keshava.domain.ImageFile;
+import com.rss.keshava.domain.Staff;
 import com.rss.keshava.domain.Status;
 import com.rss.keshava.repo.ImageRepository;
 import com.rss.keshava.utils.Constants;
@@ -28,6 +29,10 @@ public class ImageService {
 
     @Autowired
     CommitteeMemberService committeeMemberService;
+
+
+    @Autowired
+    StaffService staffservice;
 
     private final Path rootLocation = Paths.get("upload_dir");
 
@@ -99,6 +104,14 @@ public class ImageService {
                     }
                     break;
                 }
+//                case "staff": {
+//                    Staff staffByUuid = StaffService.getByUuid(uid);
+//                    if (staffByUuid != null) {
+//                        staffByUuid.setPhoto(imageFile.getFilePath());
+//                        StaffService.update(staffByUuid);
+//                    }
+//                    break;
+//                }
 
                 // TODO for student we need to pass student from it's controller and save it here
             }
@@ -112,7 +125,7 @@ public class ImageService {
 
     public List<ImageFile> getAllGalleryImages() {
         List<ImageFile> allImages = (List<ImageFile>) imageRepository.findAll();
-        return  allImages.stream().parallel().filter(i -> i.getUserUid() == null).collect(Collectors.toList());
+        return allImages.stream().parallel().filter(i -> i.getUserUid() == null).collect(Collectors.toList());
     }
 
     public Status delete(String uid) {

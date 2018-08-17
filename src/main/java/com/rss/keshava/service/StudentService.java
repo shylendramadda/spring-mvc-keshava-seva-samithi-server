@@ -1,4 +1,5 @@
 package com.rss.keshava.service;
+import com.rss.keshava.domain.Donor;
 import com.rss.keshava.domain.Status;
 import com.rss.keshava.domain.Student;
 import com.rss.keshava.repo.StudentRepository;
@@ -6,6 +7,7 @@ import com.rss.keshava.utils.Constants;
 import com.rss.keshava.utils.DateUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.transaction.Transactional;
 import java.util.Date;
@@ -79,4 +81,13 @@ public class StudentService {
         }
         return null;
     }
+
+    public Iterable<Student> getStudentsByInput(String inputString) {
+        return studentRepository.findBySnameIgnoreCaseContainingOrAdmissionNumberIgnoreCaseContaining(inputString, inputString);
+    }
+
+    public ModelAndView downloadPdf() {
+        return new ModelAndView("pdfView", "students", studentRepository.findAll());
+    }
+
 }

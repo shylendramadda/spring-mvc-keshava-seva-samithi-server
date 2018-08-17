@@ -21,6 +21,7 @@ public class CommitteeMemberService {
     public Status create(CommitteeMember committeeMember) {
         try {
             CommitteeMember dbUser = committeeMemberRepository.findByEmailOrMobileOrSurName(committeeMember.getEmail(), committeeMember.getMobile(), committeeMember.getSurName());
+
             if (dbUser != null) {
                 return new Status(Constants.FAILED, "Committee Member already exists");
             }

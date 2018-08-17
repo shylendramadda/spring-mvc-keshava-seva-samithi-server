@@ -41,7 +41,7 @@ public class Donor {
     private String amountFor;
     private String paymentType;
     private String amount;
-    private int pincode;
+    private String pincode;
 
     public Long getId() {
         return id;
@@ -251,11 +251,11 @@ public class Donor {
         this.amount = amount;
     }
 
-    public int getPincode() {
+    public String getPincode() {
         return pincode;
     }
 
-    public void setPincode(int pincode) {
+    public void setPincode(String pincode) {
         this.pincode = pincode;
     }
 

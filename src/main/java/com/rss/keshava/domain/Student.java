@@ -19,10 +19,10 @@ public class Student {
     private String createdOn;
     private String updatedOn;
 
-    private int admissionNumber;
+    private String admissionNumber;
     private String sname;
-    private Date dateOfBirth ;
-    private int age;
+    private String dateOfBirth ;
+    private String age;
     private String caste;
     private String orphan;
     private String gender;
@@ -30,24 +30,24 @@ public class Student {
     private String email;
     //private String class;
     private String schoolAddress;
-    private int adharNumber;
-    private int mobileNumber;
+    private String adharNumber;
+    private String mobileNumber;
     private String presentAddress;
     private String permanentAddress;
     private String motherName;
     private String fatherName;
-    private int motherAdharNumber;
+    private String motherAdharNumber;
     private String motherOccupation;
     private String fatherAdharNumber;
     private String fatherOccupation;
-    private Date motherDearthDate;
+    private String motherDearthDate;
     private String motherPlaceOfDeath;
-    private Date fatherDearthDate;
+    private String fatherDearthDate;
     private String fatherPlaceOfDeath;
     private String gaurdianName;
-    private int gaurdianAdharNumer;
+    private String gaurdianAdharNumer;
     private String gaurdianOccupation;
-    private int gaurdianMobileNumber;
+    private String gaurdianMobileNumber;
     private String gaurdianEmailId;
     private String gaurdianPresentAddress;
     private String gaurdianPermanentAddress;
@@ -118,11 +118,11 @@ public class Student {
         this.updatedOn = updatedOn;
     }
 
-    public int getAdmissionNumber() {
+    public String getAdmissionNumber() {
         return admissionNumber;
     }
 
-    public void setAdmissionNumber(int admissionNumber) {
+    public void setAdmissionNumber(String admissionNumber) {
         this.admissionNumber = admissionNumber;
     }
 
@@ -134,19 +134,19 @@ public class Student {
         this.sname = sname;
     }
 
-    public Date getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public int getAge() {
+    public String getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(String age) {
         this.age = age;
     }
 
@@ -191,19 +191,19 @@ public class Student {
         this.schoolAddress = schoolAddress;
     }
 
-    public int getAdharNumber() {
+    public String getAdharNumber() {
         return adharNumber;
     }
 
-    public void setAdharNumber(int adharNumber) {
+    public void setAdharNumber(String adharNumber) {
         this.adharNumber = adharNumber;
     }
 
-    public int getMobileNumber() {
+    public String getMobileNumber() {
         return mobileNumber;
     }
 
-    public void setMobileNumber(int mobileNumber) {
+    public void setMobileNumber(String mobileNumber) {
         this.mobileNumber = mobileNumber;
     }
 
@@ -239,11 +239,11 @@ public class Student {
         this.fatherName = fatherName;
     }
 
-    public int getMotherAdharNumber() {
+    public String getMotherAdharNumber() {
         return motherAdharNumber;
     }
 
-    public void setMotherAdharNumber(int motherAdharNumber) {
+    public void setMotherAdharNumber(String motherAdharNumber) {
         this.motherAdharNumber = motherAdharNumber;
     }
 
@@ -271,11 +271,11 @@ public class Student {
         this.fatherOccupation = fatherOccupation;
     }
 
-    public Date getMotherDearthDate() {
+    public String getMotherDearthDate() {
         return motherDearthDate;
     }
 
-    public void setMotherDearthDate(Date motherDearthDate) {
+    public void setMotherDearthDate(String motherDearthDate) {
         this.motherDearthDate = motherDearthDate;
     }
 
@@ -287,11 +287,11 @@ public class Student {
         this.motherPlaceOfDeath = motherPlaceOfDeath;
     }
 
-    public Date getFatherDearthDate() {
+    public String getFatherDearthDate() {
         return fatherDearthDate;
     }
 
-    public void setFatherDearthDate(Date fatherDearthDate) {
+    public void setFatherDearthDate(String fatherDearthDate) {
         this.fatherDearthDate = fatherDearthDate;
     }
 
@@ -311,11 +311,11 @@ public class Student {
         this.gaurdianName = gaurdianName;
     }
 
-    public int getGaurdianAdharNumer() {
+    public String getGaurdianAdharNumer() {
         return gaurdianAdharNumer;
     }
 
-    public void setGaurdianAdharNumer(int gaurdianAdharNumer) {
+    public void setGaurdianAdharNumer(String gaurdianAdharNumer) {
         this.gaurdianAdharNumer = gaurdianAdharNumer;
     }
 
@@ -327,11 +327,11 @@ public class Student {
         this.gaurdianOccupation = gaurdianOccupation;
     }
 
-    public int getGaurdianMobileNumber() {
+    public String getGaurdianMobileNumber() {
         return gaurdianMobileNumber;
     }
 
-    public void setGaurdianMobileNumber(int gaurdianMobileNumber) {
+    public void setGaurdianMobileNumber(String gaurdianMobileNumber) {
         this.gaurdianMobileNumber = gaurdianMobileNumber;
     }
 

@@ -24,7 +24,7 @@ public class MvcConfig implements WebMvcConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry
                 .addResourceHandler("/upload_dir/**")
-                .addResourceLocations(new File("F:/KSS/kss_server/upload_dir/").toURI().toString()); // Ramesh File Path
+                .addResourceLocations(new File("F:/KSS_SERVER/kss_server/upload_dir/").toURI().toString()); // Ramesh File Path
               //  .addResourceLocations(new File("D:/Projects/Web/kss_server/upload_dir/").toURI().toString()); // Raju File Path
 //                .addResourceLocations(new File("E:/Professional/Projects/Web/KSS/kss_server/upload_dir/").toURI().toString()); // Shylu File Path
     }
