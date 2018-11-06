@@ -19,7 +19,7 @@ public class Staff {
     private String createdOn;
     private String updatedOn;
 
-    private String surName;
+    private String surname;
     private String lastName;
     private String mobileNumber;
     private String emailId;
@@ -186,12 +186,12 @@ public class Staff {
         this.updatedOn = updatedOn;
     }
 
-    public String getSurName() {
-        return surName;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setSurName(String surName) {
-        this.surName = surName;
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 
     public String getLastName() {

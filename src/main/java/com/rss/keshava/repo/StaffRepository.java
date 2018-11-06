@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface StaffRepository extends CrudRepository<Staff, Long> {
 
-    Staff findBysurName(String surName);
+    Staff findBySurname(String surname);
 
     Staff findByUid(String uuid);
 }

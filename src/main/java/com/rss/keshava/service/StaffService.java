@@ -1,6 +1,5 @@
 package com.rss.keshava.service;
 
-import com.rss.keshava.domain.Donor;
 import com.rss.keshava.domain.Staff;
 import com.rss.keshava.domain.Status;
 import com.rss.keshava.repo.StaffRepository;
@@ -20,7 +19,7 @@ public class StaffService {
 
     public Status create(Staff staff) {
         try {
-            Staff dbUser = staffRepository.findBysurName(staff.getSurName());
+            Staff dbUser = staffRepository.findBySurname(staff.getSurname());
             if (dbUser != null) {
                 return new Status(Constants.FAILED, "Staff already exists");
             }
@@ -42,7 +41,7 @@ public class StaffService {
 
     public Status update(Staff staff) {
         try {
-            Staff dbUser = staffRepository.findBysurName(staff.getSurName());
+            Staff dbUser = staffRepository.findByUid(staff.getUid());
             if (dbUser != null) {
                 long time = new Date().getTime();
                 staff.setUpdateTime(time);
